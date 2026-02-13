@@ -1,0 +1,82 @@
+# Urban Occlusion-Aware Depth Estimation Configuration
+
+# Random seed for reproducibility
+seed: 42
+
+# Data configuration
+data:
+  image_height: 256
+  image_width: 512
+  batch_size: 8
+  num_workers: 4
+  min_depth: 0.1
+  max_depth: 80.0
+  augmentation_prob: 0.5
+  use_synthetic: true
+
+# Model configuration
+model:
+  encoder: resnet50
+  pretrained: true
+  decoder_channels: [256, 128, 64, 32]
+  use_edge_attention: true
+  dropout: 0.1
+
+# Training configuration
+training:
+  num_epochs: 50
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  gradient_clip: 1.0
+  mixed_precision: true
+  
+  # Loss weights
+  depth_loss_weight: 1.0
+  edge_loss_weight: 0.5
+  gradient_loss_weight: 0.1
+  ssim_loss_weight: 0.2
+  
+  # Early stopping
+  patience: 15
+  min_delta: 0.0001
+  
+  # Checkpointing
+  save_frequency: 5
+
+# Optimizer configuration
+optimizer:
+  type: adam
+  betas: [0.9, 0.999]
+  eps: 0.00000001
+
+# Scheduler configuration
+scheduler:
+  type: cosine
+  T_max: 50
+  eta_min: 0.000001
+
+# Paths
+paths:
+  data_root: ./data
+  checkpoint_dir: ./checkpoints
+  results_dir: ./results
+  log_dir: ./logs
+
+# MLflow tracking
+mlflow:
+  experiment_name: urban-occlusion-depth-estimation
+  tracking_uri: ./mlruns
+  enabled: true
+
+# Evaluation
+evaluation:
+  visualize: true
+  num_samples: 10
+  save_predictions: true
+
+# Target metrics (for reference)
+target_metrics:
+  abs_rel_error: 0.085
+  delta_1_accuracy: 0.9
+  boundary_f1_score: 0.75
+  occlusion_edge_recall: 0.82

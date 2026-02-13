@@ -1,0 +1,21 @@
+{
+  "train_loss": 0.6566633906364441,
+  "train_depth_loss": 0.2473371701836586,
+  "train_edge_loss": 0.8186524415016174,
+  "val_loss": 0.6676899838447571,
+  "val_depth_loss": 0.2607068453729153,
+  "val_edge_loss": 0.8139662760496139,
+  "val_abs_rel": 1.8321223385632037,
+  "val_sq_rel": 1.204537861123681,
+  "val_rmse": 0.3119393481314182,
+  "val_rmse_log": 0.8045406419038773,
+  "val_delta1": 0.51450439453125,
+  "val_delta2": 0.6752412414550781,
+  "val_delta3": 0.7642561340332031,
+  "val_edge_precision": 0.0,
+  "val_edge_recall": 0.0,
+  "val_edge_f1": 0.0,
+  "val_edge_iou": 0.0,
+  "val_edge_occlusion_recall": 0.0,
+  "learning_rate": 1e-06
+}

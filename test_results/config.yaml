@@ -1,0 +1,61 @@
+data:
+  augmentation_prob: 0.5
+  batch_size: 2
+  image_height: 128
+  image_width: 256
+  max_depth: 80.0
+  min_depth: 0.1
+  num_workers: 0
+  use_synthetic: true
+evaluation:
+  num_samples: 2
+  save_predictions: false
+  visualize: false
+mlflow:
+  enabled: false
+  experiment_name: quick-test
+  tracking_uri: ./mlruns
+model:
+  decoder_channels:
+  - 64
+  - 32
+  - 16
+  - 8
+  dropout: 0.1
+  encoder: resnet18
+  pretrained: false
+  use_edge_attention: true
+optimizer:
+  betas:
+  - 0.9
+  - 0.999
+  eps: 1.0e-08
+  type: adam
+paths:
+  checkpoint_dir: ./test_checkpoints
+  data_root: ./data
+  log_dir: ./test_logs
+  results_dir: ./test_results
+scheduler:
+  T_max: 2
+  eta_min: 1.0e-06
+  type: cosine
+seed: 42
+target_metrics:
+  abs_rel_error: 0.085
+  boundary_f1_score: 0.75
+  delta_1_accuracy: 0.9
+  occlusion_edge_recall: 0.82
+training:
+  depth_loss_weight: 1.0
+  edge_loss_weight: 0.5
+  gradient_clip: 1.0
+  gradient_loss_weight: 0.1
+  learning_rate: 0.001
+  min_delta: 0.0001
+  mixed_precision: false
+  num_epochs: 2
+  patience: 15
+  save_frequency: 1
+  ssim_loss_weight: 0.2
+  weight_decay: 1.0e-05
