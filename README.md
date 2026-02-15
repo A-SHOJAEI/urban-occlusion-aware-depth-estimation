@@ -89,12 +89,12 @@ Run `python scripts/train.py` to reproduce the following metrics:
 
 | Metric | Target | Result |
 |--------|--------|--------|
-| Absolute Relative Error | 0.085 | TBD |
-| Delta 1 Accuracy | 0.900 | TBD |
-| Boundary F1 Score | 0.750 | TBD |
-| Occlusion Edge Recall | 0.820 | TBD |
+| Absolute Relative Error | 0.085 | 2.3012 |
+| Delta 1 Accuracy | 0.900 | 0.4912 |
+| Boundary F1 Score | 0.750 | 0.0019 |
+| Occlusion Edge Recall | 0.820 | 0.0009 |
 
-Results will be saved to the `results/` directory after training.
+Results were saved to the `results/` directory after training.
 
 ## Dataset
 
