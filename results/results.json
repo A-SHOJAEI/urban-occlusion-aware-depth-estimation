@@ -1,0 +1,44 @@
+{
+  "project": "urban-occlusion-aware-depth-estimation",
+  "description": "Multi-task monocular depth and occlusion boundary prediction with edge-guided attention",
+  "dataset": "Synthetic (KITTI-format)",
+  "test_metrics": {
+    "abs_rel": 2.3012020921707155,
+    "sq_rel": 1.396361181139946,
+    "rmse": 0.2936272519826889,
+    "rmse_log": 0.8460057377815247,
+    "delta1": 0.4911796188354492,
+    "delta2": 0.6623397064208985,
+    "delta3": 0.8105027770996094,
+    "edge_precision": 0.10547504995018243,
+    "edge_recall": 0.0009414981977897696,
+    "edge_f1": 0.0018573153956094757,
+    "edge_iou": 0.0009306116786319763,
+    "edge_occlusion_recall": 0.0009414981977897696
+  },
+  "validation_metrics": {
+    "val_loss": 0.6676899838447571,
+    "val_depth_loss": 0.2607068453729153,
+    "val_edge_loss": 0.8139662760496139,
+    "val_abs_rel": 1.8321223385632037,
+    "val_sq_rel": 1.204537861123681,
+    "val_rmse": 0.3119393481314182,
+    "val_rmse_log": 0.8045406419038773,
+    "val_delta1": 0.51450439453125,
+    "val_delta2": 0.6752412414550781,
+    "val_delta3": 0.7642561340332031,
+    "val_edge_precision": 0.0,
+    "val_edge_recall": 0.0,
+    "val_edge_f1": 0.0,
+    "val_edge_iou": 0.0,
+    "val_edge_occlusion_recall": 0.0
+  },
+  "training_metrics": {
+    "train_loss": 0.6566633906364441,
+    "train_depth_loss": 0.2473371701836586,
+    "train_edge_loss": 0.8186524415016174,
+    "learning_rate": 1e-06
+  },
+  "config_file": "configs/default.yaml",
+  "checkpoint_file": "checkpoints/best_model.pth"
+}
